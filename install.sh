@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#Require: git vim tmux vim curl
+#Require: git vim tmux curl
 
 #tmux
 ln -s tmux.conf ~/.tmux.conf
