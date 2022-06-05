@@ -18,9 +18,8 @@ sed -i '' -e 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosugge
 
 #little add to .zshrc
 cat << EOT >> ~/.zshrc
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-export PATH="$HOME/bin:$PATH"
+export GPG_TTY="$\(tty)" #remove backslash
+export SSH_AUTH_SOCK=$\(gpgconf --list-dirs agent-ssh-socket) #remove backslash
 gpgconf --launch gpg-agent
 neofetch
 EOT
