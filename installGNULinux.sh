@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #Require: git vim tmux curl gpg neofetch
+#TODO: Install packages
 
 #tmux
 ln -s tmux.conf ~/.tmux.conf
@@ -11,6 +12,8 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 #ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sed 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
+sed 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g' ~/.zshrc
 
 #little add to .zshrc
 cat << EOT >> ~/.zshrc
